@@ -50,7 +50,7 @@ span.x4:before, i.x4:before
 header .container-fluid
 {
     /*background-image: url('https://unsplash.it/2560/1707?image=961');*/
-    background-image: url('static/landpage/img/logo2.jpg');
+    background-image: url('../img/logo2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -166,7 +166,7 @@ header .container-fluid
     ),
 
     /*url(https://unsplash.it/4000/3000?image=528);*/
-    url(static/landpage/img/background5.jpeg);
+    url('../img/background5.jpeg');
 }
 
 .prefooter h1,
