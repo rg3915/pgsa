@@ -8,7 +8,7 @@
 
 @media (max-width: 600px) {
   .contact {
-    margin-top: 5em;
+    margin-top: 12em;
   }
 }
 
@@ -60,11 +60,19 @@ span.x4:before, i.x4:before
 header .container-fluid
 {
     /*background-image: url('https://unsplash.it/2560/1707?image=961');*/
-    background-image: url('../img/logo2.jpg');
+    background-image: url('../img/logo_branco_recortado.jpg');
     background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    padding-top: 36px;
+    background-size: auto;
+    background-position: center;
+    /*height: 100vh;*/
+    /*padding-top: 36px;*/
+}
+
+@media (max-width: 600px) {
+  header .container-fluid
+   {
+    background-size: 75% auto;
+    }
 }
 
 .hamburger
