@@ -1555,3 +1555,12 @@ section {
   font-size: 13px;
   color: #fff;
 }
+
+.contact .info {
+  box-shadow: none;
+}
+
+.span-is-link {
+  cursor: pointer;
+  color: #428bca;
+}
