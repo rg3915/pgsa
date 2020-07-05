@@ -1564,3 +1564,8 @@ section {
   cursor: pointer;
   color: #428bca;
 }
+
+.img-area {
+  width: 40px;
+  margin-bottom: 10px;
+}
