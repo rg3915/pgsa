@@ -1047,7 +1047,7 @@ section {
 }
 
 .testimonials .testimonial-item p {
-  font-style: italic;
+  font-style: normal;
   margin: 15px 0 0 0;
   padding: 0;
 }
@@ -1554,4 +1554,18 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+}
+
+.contact .info {
+  box-shadow: none;
+}
+
+.span-is-link {
+  cursor: pointer;
+  color: #428bca;
+}
+
+.img-area {
+  width: 40px;
+  margin-bottom: 10px;
 }
