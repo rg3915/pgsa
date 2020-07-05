@@ -1569,3 +1569,11 @@ section {
   width: 40px;
   margin-bottom: 10px;
 }
+
+.li-area {
+  list-style: none;
+}
+
+.space-line {
+  margin-bottom: .5em;
+}
