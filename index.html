@@ -178,30 +178,68 @@
                   <h4 class="title"><a href="">Lorem Ipsum</a></h4>
                 </div> -->
 
-                  <div class="accordion" id="accordionExample">
-                    <div v-for="area in areas">
-                      <div id="headingOne" class="card-header">
-                        <div class="icon-box" data-toggle="collapse" :data-target="'#'+area.target" aria-expanded="true" aria-controls="area.target">
-                          <div class="icon span-is-link">
-                            <img class="img-area" :src="area.image">
-                            <h4 class="title">{{ area.title }}</h4>
-                            <span class="float-right">
-                              <i class="bx bx-chevron-right"></i>
-                            </span>
+                  <nav class="nav nav-pills flex-row service-tabs" id="myTab" role="tablist">
+                      <a class="nav-link active flex-fill text-center" id="home-tab" data-toggle="tab" href="#areas" role="tab" aria-controls="areas" aria-selected="true">Áreas</a>
+                      <a class="nav-link flex-fill text-center" id="sectors-tab" data-toggle="tab" href="#sectors" role="tab" aria-controls="sectors" aria-selected="false">Setores</a>
+                  </nav>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="areas" role="tabpanel" aria-labelledby="areas-tab">
+
+                      <div class="accordion" id="accordionExample">
+                        <div v-for="area in areas">
+                          <div id="headingOne" class="card-header">
+                            <div data-toggle="collapse" :data-target="'#'+area.target" aria-expanded="true" aria-controls="area.target">
+                              <div class="icon span-is-link">
+                                <div class="first-section">
+                                  <img class="img-area" :src="area.image">
+                                  <h4 class="title">{{ area.title }}</h4>
+                                </div>
+                                <i class="bx bx-chevron-right"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div :id="area.target" class="collapse service-collapse" data-parent="#accordionExample">
+                            <div>
+                              <ul class='li-area'>
+                                <li v-for="item in area.items" class='space-line'>
+                                  <i class='bx bx-chevron-right'></i> {{ item }}
+                                </li>
+                              </ul>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                      <div :id="area.target" class="collapse">
-                        <div>
-                          <ul class='li-area'>
-                            <li v-for="item in area.items" class='space-line'>
-                              <i class='bx bx-chevron-right'></i> {{ item }}
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
+                      </div> <!-- accordion -->
+
                     </div>
-                  </div> <!-- accordion -->
+                    <div class="tab-pane fade" id="sectors" role="tabpanel" aria-labelledby="sectors-tab">
+
+                      <div class="accordion" id="accordion2Example">
+                        <div v-for="sector in sectors">
+                          <div id="headingOne" class="card-header">
+                            <div data-toggle="collapse" :data-target="'#'+sector.target" aria-expanded="true" aria-controls="sector.target">
+                              <div class="icon span-is-link">
+                                <div class="first-section">
+                                  <img class="img-area" :src="sector.image">
+                                  <h4 class="title">{{ sector.title }}</h4>
+                                </div>
+                                <i class="bx bx-chevron-right"></i>
+                              </div>
+                            </div>
+                          </div>
+                          <div :id="sector.target" class="collapse service-collapse" data-parent="#accordion2Example">
+                            <div>
+                              <ul class='li-area'>
+                                <li v-for="item in sector.items" class='space-line'>
+                                  <i class='bx bx-chevron-right'></i> {{ item }}
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div> <!-- accordion -->
+
+                    </div>
+                  </div>
 
                 </div> <!-- col-xl-12 -->
 
@@ -567,6 +605,8 @@
             "Arbitragem"
           ]
         },
+      ],
+      sectors: [
         {
           target: "collapseAgro",
           image: "assets/img/icons/ico-agro.png",
@@ -634,8 +674,7 @@
             "Negociação e formalização de contratos de edição e cessão de direitos autorais relativos a obras literárias e audiovisuais, cessão de espaço televisivo, produção de obras fonográficas e audiovisuais para veiculação em rádio, televisão e cinema, entre outros",
             "Assessoria na estruturação jurídica de plataformas virtuais de serviços de disponibilização de conteúdo audiovisual (online streaming)."
           ]
-        }
-      ],
+        }]
     }
   });
   </script>

@@ -815,9 +815,9 @@ section {
 }
 
 .services .title {
-  margin-left: 60px;
+  margin-left: 30px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
   font-size: 18px;
 }
 
@@ -1563,11 +1563,19 @@ section {
 .span-is-link {
   cursor: pointer;
   color: #428bca;
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.span-is-link .first-section {
+  display: flex;
+  align-items: center;  
 }
 
 .img-area {
   width: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .li-area {
@@ -1576,4 +1584,10 @@ section {
 
 .space-line {
   margin-bottom: .5em;
+}
+
+.service-collapse {
+  background-color: rgba(0,0,0,.03);
+  padding: 25px 0px;  
+  padding-right: 30px
 }
