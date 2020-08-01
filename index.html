@@ -49,6 +49,8 @@
 
 <body>
 
+  <div id="app">
+
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container-fluid">
@@ -591,6 +593,11 @@
 
                 <!-- aqui2 -->
 
+                <ul v-for="area in areas">
+                  <li>{{ area.title }}</li>
+                  <li v-for="item in area.items">{{ item }}</li>
+                </ul>
+
                 <!-- <div class="icon-box">
                   <div class="icon"><i class="bx bx-fingerprint"></i></div>
                   <h4 class="title"><a href="">Lorem Ipsum</a></h4>
@@ -602,16 +609,23 @@
                   <h4 class="title"><a href="">Lorem Ipsum</a></h4>
                 </div> -->
 
-                <div class="icon-box" data-toggle="collapse" data-target="#collapseSocietario">
-                  <div class="icon span-is-link">
-                    <img class="img-area" src="assets/img/icons/ico-societario.png">
-                    <h4 class="title">FUSÕES E AQUISIÇÕES (M&A) / SOCIETÁRIO</h4>
-                    <span class="float-right">
-                      <i class="bx bx-chevron-right"></i>
-                    </span>
+                <div class="accordion" id="accordionExample">
+
+                <div class="card">
+                  <div id="headingOne" class="card-header">
+                    <div class="icon-box" data-toggle="collapse" data-target="#collapseSocietario" aria-expanded="false" aria-controls="collapseSocietario">
+                      <div class="icon span-is-link">
+                        <img class="img-area" src="assets/img/icons/ico-societario.png">
+                        <h4 class="title">FUSÕES E AQUISIÇÕES (M&A) / SOCIETÁRIO</h4>
+                        <span class="float-right">
+                          <i class="bx bx-chevron-right"></i>
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-                <div id="collapseSocietario" class="collapse">
+                
+                <div id="collapseSocietario" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                   <div class="">
                     <ul class="li-area">
                       <li class="space-line"><i class="bx bx-chevron-right"></i> Operações de M&A (due diligence jurídica, estruturação de operações de compra e venda de empresas, assessoria em aspectos relacionados ao controle de concentração econômica (antitruste), bem como na elaboração e negociação de contratos de compra e venda de participações societárias, suporte legal em aspectos relacionados à fase de integração)</li>
@@ -656,10 +670,10 @@
                 <div id="collapseContrato" class="collapse">
                   <div>
                     <ul class='li-area'>
-                    <li class='space-line'><i class='bx bx-chevron-right'></i> Estruturação e negociação de parcerias comerciais em geral</li>
-                    <li class='space-line'><i class='bx bx-chevron-right'></i> Negociação de contratos empresariais, nacionais e internacionais (prestação de serviços, representação comercial, distribuição etc.)</li>
-                    <li class='space-line'><i class='bx bx-chevron-right'></i> Elaboração de consultas e pareceres</li>
-                </ul>
+                      <li class='space-line'><i class='bx bx-chevron-right'></i> Estruturação e negociação de parcerias comerciais em geral</li>
+                      <li class='space-line'><i class='bx bx-chevron-right'></i> Negociação de contratos empresariais, nacionais e internacionais (prestação de serviços, representação comercial, distribuição etc.)</li>
+                      <li class='space-line'><i class='bx bx-chevron-right'></i> Elaboração de consultas e pareceres</li>
+                    </ul>
                   </div>
                 </div>
 
@@ -986,6 +1000,7 @@
                 </ul>
                   </div>
                 </div>
+              </div>
 
 
               </div>
@@ -1546,6 +1561,11 @@
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
+</div>
+
+  <!-- VueJS -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -1567,6 +1587,219 @@
       $('#modal-details').modal('toggle');
     });
   </script>
+
+<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        headers: [
+          {text: 'ID'},
+          {text: 'Descrição'},
+        ],
+        areas: [
+          {
+            target: "collapseSocietario",
+            image: "assets/img/icons/ico-societario.png",
+            title: "FUSÕES E AQUISIÇÕES (M&A) / SOCIETÁRIO",
+            items: [
+              "Operações de M&A (due diligence jurídica, estruturação de operações de compra e venda de empresas, assessoria em aspectos relacionados ao controle de concentração econômica (antitruste), bem como na elaboração e negociação de contratos de compra e venda de participações societárias, suporte legal em aspectos relacionados à fase de integração)",
+              "Concepção e modelagem de startups e desenvolvimento de mecanismos visando à captação de investimentos privados e públicos",
+              "Estruturação e implementação de parcerias empresariais (consórcios, joint-ventures, sociedades de propósito específico etc.)",
+              "Elaboração e negociação de instrumentos societários em geral: contratos e estatutos sociais, acordo de sócios, atas de reuniões e alterações contratuais etc",
+              "Reestruturação societária (operações de incorporação, fusão e cisão de empresas e transformação de tipo societário)",
+              "Representação legal de pessoas físicas e jurídicas estrangeiras",
+              "Planejamento patrimonial e sucessório",
+            ]
+          },
+          {
+            target: "collapseEstrangeiro",
+            image: "assets/img/icons/ico-estrangeiro.png",
+            title: "INVESTIMENTOS ESTRANGEIROS",
+            items: [
+              "Apoio ao desenvolvimento de negócios internacionais no Brasil, abrangendo a concepção da estrutura societária e definição dos modelos de negócios",
+              "Operações de financiamento internacional de projetos, consultoria relacionada a regulamentação cambial e registros de ingressos e saídas de divisas junto ao Banco Central do Brasil",
+              "Obtenção de vistos para investidores e administradores estrangeiros"
+            ]
+          },
+          {
+            target: "collapseContrato",
+            image: "assets/img/icons/ico-contrato.png",
+            title: "DIREITO COMERCIAL E CONTRATOS EMPRESARIAIS",
+            items: [
+              "Estruturação e negociação de parcerias comerciais em geral",
+              "Negociação de contratos empresariais, nacionais e internacionais (prestação de serviços, representação comercial, distribuição etc.)",
+              "Elaboração de consultas e pareceres"
+            ]
+          },
+          {
+            target: "collapseTributario",
+            image: "assets/img/icons/ico-tributario.png",
+            title: "TRIBUTÁRIO",
+            items: [
+              "Consultoria tributária em tributos diretos e indiretos",
+              "Contencioso tributário administrativo e judicial nas esferas federal, estadual e municipal",
+              "Revisão de procedimentos internos, reorganização e planejamento tributário",
+              "Assessoria em operações internacionais",
+              "Estruturação de novos negócios: análise de eficiência tributária",
+              "Suporte no aproveitamento de benefícios fiscais"
+            ]
+          },
+          {
+            target: "collapseTrabalhista",
+            image: "assets/img/icons/ico-trabalhista.png",
+            title: "TRABALHISTA E SEGURIDADE SOCIAL",
+            items: [
+              "Consultoria trabalhista em geral para análise da conformidade de práticas empresariais com a legislação trabalhista",
+              "Análise de risco trabalhista relacionado ao cumprimento das leis trabalhistas, revisão de práticas e procedimentos internos, bem como consultoria na implementação de medidas mitigatórias",
+              "Elaboração, implementação e atualização de políticas internas relacionadas ao ambiente de trabalho, e realização de treinamentos in company",
+              "Consultoria na definição das modalidades de contratação de funcionários",
+              "Elaboração de contratos de trabalho em suas diversas modalidades",
+              "Assessoria a empresas com relação a trabalho expatriado",
+              "Consultoria empresarial em matéria previdenciária"
+            ]
+          },
+          {
+            target: "collapseIntelectual",
+            image: "assets/img/icons/ico-intelectual.png",
+            title: "PROPRIEDADE INTELECTUAL",
+            items: [
+              "Proteção de direitos de propriedade intelectual (direitos autorais, marcas e patentes, software e nomes de domínio de internet)",
+              "Elaboração e revisão de contratos relacionados à proteção de bens de propriedade intelectual nacionais e internacionais, tais como contratos de fornecimento de tecnologia/know how e de cooperação técnica, licenciamento de marcas e patentes, contratos de cessão de direitos autorais",
+              "Estruturação de redes de franquia, elaboração de carta circular de oferta (COF), contratos e pré-contratos de franquia, além da prestação de assessoria legal no gerenciamento e suporte à rede franqueada",
+              "Atuação junto ao Instituto Nacional de Propriedade Industrial (INPI) em processos de registros de marcas e patentes, bem como junto à Organização Mundial da Propriedade Intelectual (OMPI) para a proteção internacional de marcas",
+              "Contencioso administrativo junto ao INPI, envolvendo a apresentação de recursos, oposições e manifestações a oposições de terceiros",
+              "Suporte na adoção de medidas extrajudiciais e judiciais visando coibir práticas lesivas a direitos de propriedade intelectual, tais como contrafação de marcas e patentes, pirataria, concorrência desleal, propaganda enganosa etc."
+            ]
+          },
+          {
+            target: "collapseCompliance",
+            image: "assets/img/icons/compliance.png",
+            title: "COMPLIANCE",
+            items: [
+              "Assessoria na criação e implementação de programas de conformidade para orientação de condutas no ambiente interno das empresas e no relacionamento externo com clientes e fornecedores",
+              "Elaboração de programas de integridade voltados ao relacionamento com a Administração Pública",
+              "Revisão de contratos à luz das leis anticorrupção",
+              "Condução de investigações, auditorias e suporte legal no tratamento de situações de não-conformidade, bem como monitoramento e treinamentos"
+            ]
+          },
+          {
+            target: "collapseAdministrativo",
+            image: "assets/img/icons/ico-administrativo.png",
+            title: "DIREITO ADMINISTRATIVO E REGULATÓRIO",
+            items: [
+              "Assessoria em licitações, abrangendo a identificação de oportunidades de participação, levantamento e organização de documentos de habilitação jurídica, participação em sessões públicas presenciais e eletrônicas, bem como o contencioso administrativo e judicial relacionado",
+              "Atuação junto a autarquias e agências reguladoras, em especial relacionada aos setores de telecomunicações (ANATEL), vigilância sanitária (ANVISA), certificação de produtos (INMETRO) e trânsito (DENATRAN, DETRANs)",
+              "Assessoria em contratos administrativos em geral",
+              "Interface com autoridades regulatórias e conselhos profissionais, visando à obtenção de certificados, licenças e atestados e condução de contencioso administrativo e judicial relacionado",
+              "Suporte na elaboração e apresentação de projetos junto à Administração Pública, participação em parcerias público-privadas (PPPs) e procedimentos de manifestação de interesse (PMI)"
+            ]
+          },
+          {
+            target: "collapseTecnologia",
+            image: "assets/img/icons/ico-tecnologia.png",
+            title: "DIREITO ELETRÔNICO E INFORMÁTICA",
+            items: [
+              "Revisão e elaboração de contratos de desenvolvimento, cessão e licenciamento de software etc.",
+              "Estruturação de negócios realizados em ambiente virtual (cloud computing, marketplace, e-commerce etc.)",
+              "Elaboração de políticas de privacidade e termos de uso de sites e aplicativos"
+            ]
+          },
+          {
+            target: "collapseLock",
+            image: "assets/img/icons/lock.png",
+            title: "PROTEÇÃO DE DADOS",
+            items: [
+              "Avaliação de nível de conformidade (Gap Analysis) com padrões exigidos e recomendados pela Lei Geral de Proteção de Dados (LGPD)",
+              "Implementação de regras de governança e boas práticas em privacidade",
+              "Elaboração do relatório de impacto à proteção de dados pessoais",
+              "Monitoramento de programa de governança em privacidade",
+              "Consultoria legal na revisão de contratos e instrumentos jurídicos que envolvam o tratamento de dados pessoais, bem como em situações de vazamentos de informações ou acessos não autorizados",
+              "Futura atuação junto à Agência Nacional de Proteção de Dados (ANPD)."
+            ]
+          },
+          {
+            target: "collapseContencioso",
+            image: "assets/img/icons/ico-agro.png",
+            title: "CONTENCIOSO CÍVEL",
+            items: [
+              "Contencioso estratégico empresarial",
+              "Recuperação Judicial e Falência",
+              "Litígios societários",
+              "Arbitragem"
+            ]
+          },
+          {
+            target: "collapseAgro",
+            image: "assets/img/icons/ico-agro.png",
+            title: "AGRONEGÓCIOS",
+            items: [
+              "Assessoria voltada à captação de recursos junto a investidores privados",
+              "Elaboração de instrumentos contratuais diversos",
+              "Planejamento tributário"
+            ]
+          },
+          {
+            target: "collapseTelecom",
+            image: "assets/img/icons/telecom.png",
+            title: "TELECOMUNICAÇÕES",
+            items: [
+              "Assessoria em procedimentos de certificação e homologação de produtos para telecomunicações junto à ANATEL."
+            ]
+          },
+          {
+            target: "collapseTerceiroSetor",
+            image: "assets/img/icons/tercsetor.png",
+            title: "TERCEIRO SETOR",
+            items: [
+              "Assessoria a associações civis e organizações sem fins lucrativos em geral visando ao cumprimento de obrigações legais e aproveitamento de benefícios tributários."
+            ]
+          },
+          {
+            target: "collapseEngenharia",
+            image: "assets/img/icons/ico-engenharia.png",
+            title: "ENGENHARIA",
+            items: [
+              "Elaboração e negociação de contratos de engenharia em geral: empreitada, gerenciamento de obra, operações de built to suit (BTS), elaboração de projetos, entre outros",
+              "Planejamento tributário internacional"
+            ]
+          },
+          {
+            target: "collapseInfra",
+            image: "assets/img/icons/ico-infraestrutura.png",
+            title: "INFRAESTRUTURA",
+            items: [
+              "Gestão de contratos de grandes obras; assessoria na estruturação de mecanismos de captação de recursos públicos e privados via mercado de capitais."
+            ]
+          },
+          {
+            target: "collapseMineracao",
+            image: "assets/img/icons/ico-mineracao.png",
+            title: "MINERAÇÃO",
+            items: [
+              "Atuação junto à Agência Nacional de Mineração (ANM) para obtenção de licenças, autorizações e concessões em geral; suporte em matéria contratual para viabilizar a exploração de direitos minerários."
+            ]
+          },
+          {
+            target: "collapseInovacao",
+            image: "assets/img/icons/ico-tecnologia.png",
+            title: "INOVAÇÃO TECNOLÓGICA",
+            items: [
+              "Estruturação e desenvolvimento de projetos de inovação, com foco em aspectos societários, tributários, contratuais e na proteção aos direitos de propriedade intelectual."
+            ]
+          },
+          {
+            target: "collapseEntretenimento",
+            image: "assets/img/icons/ico-midia.png",
+            title: "ENTRETENIMENTO E MÍDIA",
+            items: [
+              "Negociação e formalização de contratos de edição e cessão de direitos autorais relativos a obras literárias e audiovisuais, cessão de espaço televisivo, produção de obras fonográficas e audiovisuais para veiculação em rádio, televisão e cinema, entre outros",
+              "Assessoria na estruturação jurídica de plataformas virtuais de serviços de disponibilização de conteúdo audiovisual (online streaming)."
+            ]
+          }
+        ],
+      }
+    });
+</script>
 
 </body>
 
