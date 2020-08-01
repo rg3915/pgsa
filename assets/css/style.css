@@ -801,11 +801,11 @@ section {
 }
 
 .services .icon-box {
-  margin-bottom: 60px;
+  /*margin-bottom: 60px;*/
 }
 
 .services .icon {
-  float: left;
+  /*float: left;*/
 }
 
 .services .icon i {
