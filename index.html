@@ -20,10 +20,12 @@
   <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
   <!-- Font-awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
   <!-- =======================================================
   * Template Name: Hidayah - v2.2.0
   * Template URL: https://bootstrapmade.com/hidayah-free-simple-html-template-for-corporate/
@@ -259,9 +261,8 @@
           </div>
           <div class="row justify-content-center">
             <div class="col-xl-10">
-              <div class="row">
-                <div class="col-lg-6">
-                  <div class="testimonial-item">
+              <div class="profissionais-carousel">
+                <div class="testimonial-item">
                     <!-- <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt=""> -->
                     <h3>Rafael Pinheiro</h3>
                     <h4>Sócio fundador</h4>
@@ -269,10 +270,8 @@
                     <p><b>Áreas de atuação:</b> Societário; Fusões e Aquisições (M&A), Investimentos Estrangeiros, Direito Comercial e Contratos Empresariais, Propriedade Intelectual, Direito Eletrônico e Informática, Compliance e Proteção de Dados.</p>
                     <p><b>Idiomas:</b> Português, inglês e italiano.</p>
                     <p><b>E-mail:</b> <a href="mailto:rpinheiro@pgsa.com.br">rpinheiro@pgsa.com.br</a></p>
-                  </div>
                 </div>
-                <div class="col-lg-6">
-                  <div class="testimonial-item mt-4 mt-lg-0">
+                <div class="testimonial-item mt-4 mt-lg-0">
                     <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
                     <h3>Rafael Sandi</h3>
                     <h4>Sócio fundador</h4>
@@ -280,7 +279,15 @@
                     <p><b>Áreas de atuação:</b> Tributário, Direito Administrativo e Regulatório; Trabalhista e Seguridade Social.</p>
                     <p><b>Idiomas:</b> Português e inglês.</p>
                     <p><b>E-mail:</b> <a href="mailto:rsandi@pgsa.com.br">rsandi@pgsa.com.br</a></p>
-                  </div>
+                </div>
+                <div class="testimonial-item mt-4 mt-lg-0">
+                    <!-- <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt=""> -->
+                    <h3>Rafael Sandi</h3>
+                    <h4>Sócio fundador</h4>
+                    <p>Graduado pela Faculdade de Direito da Universidade de São Paulo (FD-USP); especialista em Direito Tributário pelo Instituto Brasileiro de Estudos Tributários (IBET).</p>
+                    <p><b>Áreas de atuação:</b> Tributário, Direito Administrativo e Regulatório; Trabalhista e Seguridade Social.</p>
+                    <p><b>Idiomas:</b> Português e inglês.</p>
+                    <p><b>E-mail:</b> <a href="mailto:rsandi@pgsa.com.br">rsandi@pgsa.com.br</a></p>
                 </div>
               </div>
             </div>
@@ -457,6 +464,7 @@
   <script src="assets/vendor/counterup/counterup.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
@@ -676,6 +684,14 @@
           ]
         }]
     }
+  });
+  </script>
+
+  <script>
+  $('.profissionais-carousel').slick({
+    infinite: true,
+    slidesToShow: 2,
+    slidesToScroll: 2
   });
   </script>
 </body>
