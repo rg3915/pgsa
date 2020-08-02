@@ -248,8 +248,8 @@
                     <div class="member-info">
                       <div class="member-info-content">
                         <h4>{{ team.name }}</h4>
-                        <span>{{ team.occupation }}</span>
-                        <span style="font-style: normal">{{ team.email }}</span>
+                        <!-- <span>{{ team.occupation }}</span> -->
+                        <!-- <span style="font-style: normal">{{ team.email }}</span> -->
                         <a :href="'mailto:'+team.email">{{ team.email }}</a>
                       </div>
                       <div class="social">
@@ -267,6 +267,7 @@
           </div>
           <div class="accordion" id="accordionExample3">
             <div class="container collapse" :id="'profissionalCollapse' + team.id" v-for="team in teams" data-parent="#accordionExample3">
+              <p><b>{{ team.occupation }}</b></p>
               <div v-html='team.text'></div>
               <p><b>Áreas de atuação:</b> {{ team.actuation }}</p>
               <p><b>Idiomas:</b> {{ team.idiom }}</p>
