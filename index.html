@@ -37,6 +37,14 @@
   .icon-box {
     border-bottom: solid 1px #ced4da;
   }
+  [data-toggle="collapse"][aria-expanded="true"] .js-rotate-if-collapsed
+  {
+    -webkit-transform: rotate(90deg);
+    -moz-transform:    rotate(90deg);
+    -ms-transform:     rotate(90deg);
+    -o-transform:      rotate(90deg);
+    transform:         rotate(90deg);
+  }
   </style>
 </head>
 
@@ -177,13 +185,13 @@
                       <div class="accordion" id="accordionExample">
                         <div v-for="area in areas">
                           <div id="headingOne" class="card-header">
-                            <div data-toggle="collapse" :data-target="'#'+area.target" aria-expanded="true" aria-controls="area.target">
+                            <div data-toggle="collapse" :data-target="'#'+area.target" aria-expanded="false" aria-controls="area.target">
                               <div class="icon span-is-link">
                                 <div class="first-section">
                                   <img class="img-area" :src="area.image">
                                   <h4 class="title">{{ area.title }}</h4>
                                 </div>
-                                <i class="bx bx-chevron-right"></i>
+                                <i class="bx bx-chevron-right js-rotate-if-collapsed"></i>
                               </div>
                             </div>
                           </div>
@@ -203,13 +211,13 @@
                       <div class="accordion" id="accordion2Example">
                         <div v-for="sector in sectors">
                           <div id="headingOne" class="card-header">
-                            <div data-toggle="collapse" :data-target="'#'+sector.target" aria-expanded="true" aria-controls="sector.target">
+                            <div data-toggle="collapse" :data-target="'#'+sector.target" aria-expanded="false" aria-controls="sector.target">
                               <div class="icon span-is-link">
                                 <div class="first-section">
                                   <img class="img-area" :src="sector.image">
                                   <h4 class="title">{{ sector.title }}</h4>
                                 </div>
-                                <i class="bx bx-chevron-right"></i>
+                                <i class="bx bx-chevron-right js-rotate-if-collapsed"></i>
                               </div>
                             </div>
                           </div>
